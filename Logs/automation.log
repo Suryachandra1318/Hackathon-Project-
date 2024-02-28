@@ -1,0 +1,9 @@
+19:32:15.233 [main] INFO  Test_Cases.Finding_Hospitals - -------- Validating demo button --------
+19:32:15.519 [main] INFO  Test_Cases.Finding_Hospitals -  Scrolling down to Schedule demo button 
+19:32:15.824 [main] INFO  Test_Cases.Finding_Hospitals - -------- Validating demo button --------
+19:32:17.425 [main] INFO  Test_Cases.Finding_Hospitals -  Entering incorrect detials to validate demo button 
+19:32:17.833 [main] INFO  Test_Cases.Finding_Hospitals - -------- Validating demo button --------
+19:32:18.063 [main] INFO  Test_Cases.Finding_Hospitals -  Validating demo button with incorrect details 
+19:32:18.903 [main] INFO  Test_Cases.Finding_Hospitals -  clearing the previous data 
+19:32:20.617 [main] INFO  Test_Cases.Finding_Hospitals -  Validating demo button with correct details 
+19:32:44.578 [main] INFO  Test_Cases.Finding_Hospitals -  Verifying Thank you message 
