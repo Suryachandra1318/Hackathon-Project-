@@ -25,7 +25,6 @@ public class Finding_Hospitals extends Test_Base {
 	Doctors_Page Dp;
 	EmployeeHealth_Page Ep;
 	Surgeries_Page Sp;
-	
 //	public Logger logger; 
 //	
 //	@BeforeClass
@@ -41,13 +40,28 @@ public class Finding_Hospitals extends Test_Base {
 //	}
 	
 	@Test(priority = 0, groups= {"smoke"})
-	public void Search_City() throws InterruptedException {
+	public void findDoctors() throws InterruptedException {
 		
 		logger.info("--------Started--------");
 		try {
 		Hp = new Home_Page(driver);
+		Hp.clickFindDoctors();
+		logger.info(" Clicking Find Doctors button ");
+		}
+		catch(Exception e) {
+			
+			logger.error("Test Failed");
+			Assert.fail();
+		}
+	}
+	
+	@Test(priority = 1, groups= {"smoke"})
+	public void Search_City() throws InterruptedException {
 		
-		boolean ans = Hp.Search_city();
+		try {
+		Hp = new Home_Page(driver);
+		
+		boolean ans = Hp.SearchCity();
 		Assert.assertEquals(ans, true);
 		logger.info(" Searching City ");
 		}
@@ -58,7 +72,7 @@ public class Finding_Hospitals extends Test_Base {
 		}
 	}
 	
-	@Test(priority = 1, groups= {"regression_1"})
+	@Test(priority = 2, groups= {"regression_1"})
 	public void Search_Dentists() throws InterruptedException {
 		try {
 		Hp = new Home_Page(driver);
@@ -74,7 +88,7 @@ public class Finding_Hospitals extends Test_Base {
 		
 	}
 	
-	@Test(priority = 2, groups= {"regression_2"})
+	@Test(priority = 3, groups= {"regression_2"})
 	public void select_PatientStories() throws InterruptedException {
 		
 		logger.info("--------Appling Fiters--------");
@@ -90,7 +104,7 @@ public class Finding_Hospitals extends Test_Base {
 		}
 	}
 	
-	@Test(priority = 3, groups= {"regression_2"})
+	@Test(priority = 4, groups= {"regression_2"})
 	public void select_Experience() throws InterruptedException {
 		
 		try {
@@ -105,7 +119,7 @@ public class Finding_Hospitals extends Test_Base {
 		}
 	}
 	
-	@Test(priority = 4, groups= {"regression_2"})
+	@Test(priority = 5, groups= {"regression_2"})
 	public void applyFilters() throws InterruptedException {
 		
 		try {
@@ -120,7 +134,7 @@ public class Finding_Hospitals extends Test_Base {
 		}
 	}
 	
-	@Test(priority = 5, groups= {"regression_2"})
+	@Test(priority = 6, groups= {"regression_2"})
 	public void applyFilters_1() throws InterruptedException {
 		
 		try {
@@ -138,7 +152,7 @@ public class Finding_Hospitals extends Test_Base {
 	
 	
 	
-	@Test(priority = 6, groups= {"regression_2"})
+	@Test(priority = 7, groups= {"regression_2"})
 	public void applyFilters_2() throws InterruptedException {
 		
 		try {
@@ -154,7 +168,7 @@ public class Finding_Hospitals extends Test_Base {
 		}
 	}
 	
-	@Test(priority = 7, groups= {"smoke"})
+	@Test(priority = 8, groups= {"smoke"})
 	public void get_DoctorDetails() throws InterruptedException {
 		
 		try {
@@ -169,7 +183,7 @@ public class Finding_Hospitals extends Test_Base {
 		}
 	}
 	
-	@Test(priority = 8, groups= {"regression_1"})
+	@Test(priority = 9, groups= {"regression_1"})
 	public void navigateToSurgeries() {
 		
 		try {
@@ -186,7 +200,7 @@ public class Finding_Hospitals extends Test_Base {
 	}
 	
 	
-	@Test(priority = 9, groups= {"regression_2"})
+	@Test(priority = 10, groups= {"regression_2"})
 	public void ScrollToSurgeries(){
 		
 		try {
@@ -201,7 +215,7 @@ public class Finding_Hospitals extends Test_Base {
 		}
 	}
 	
-	@Test(priority = 10, groups= {"regression_1"})
+	@Test(priority = 11, groups= {"regression_1"})
 	public void sugeryNames() {
 		
 		try {
@@ -216,7 +230,7 @@ public class Finding_Hospitals extends Test_Base {
 		}
 	}
 	
-	@Test(priority = 11, groups= {"regression_2"})
+	@Test(priority = 12, groups= {"regression_2"})
 	public void ScrollToTop() {
 		
 		try {
@@ -232,7 +246,7 @@ public class Finding_Hospitals extends Test_Base {
 		
 	}
 	
-	@Test(priority = 12, groups= {"regression_1"})
+	@Test(priority = 13, groups= {"regression_1"})
 	public void navigatioToHealth_Page() {
 		
 		logger.info("-------- Navigating To Health and wellness Page --------");
@@ -249,7 +263,7 @@ public class Finding_Hospitals extends Test_Base {
 		
 	}
 	
-	@Test(priority = 13, groups= {"regression_2"})
+	@Test(priority = 14, groups= {"regression_2"})
 	public void scrollToDemoBtn() {
 		
 		try {
@@ -265,7 +279,7 @@ public class Finding_Hospitals extends Test_Base {
 		}
 	}
 	
-	@Test(priority = 14, groups= {"regression_1"})
+	@Test(priority = 15, groups= {"regression_1"})
 	public void verifyDemoBtn_1() {
 		
 		try {
@@ -282,7 +296,7 @@ public class Finding_Hospitals extends Test_Base {
 	}
 	
 	
-	@Test(priority = 15, groups= {"smoke"})
+	@Test(priority = 16, groups= {"smoke"})
 	public void ClickDemoBtn() {
 		
 		try {

@@ -4,8 +4,8 @@
   <listeners>
     <listener class-name="Utilities.ExtentReportManager"/>
   </listeners>
-  <test thread-count="5" name="Test_1(failed)">
-    <parameter name="browser" value="edge"/>
+  <test thread-count="5" parallel="tests" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="Test_Cases.Finding_Hospitals">
         <methods>
@@ -15,5 +15,5 @@
         </methods>
       </class> <!-- Test_Cases.Finding_Hospitals -->
     </classes>
-  </test> <!-- Test_1(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

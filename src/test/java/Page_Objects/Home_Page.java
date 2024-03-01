@@ -16,23 +16,20 @@ public class Home_Page extends Constructor {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@FindBy (xpath = "(//*[@class='c-omni-searchbox c-omni-searchbox--small'])[1]")
-	WebElement searchBtn_1;
+	@FindBy (xpath = "(//*[@class='product-tab__title'])[1]")
+	WebElement findDoctorsBtn;
 	
-	@FindBy (xpath = "(//*[@class='c-omni-searchbox c-omni-searchbox--small'])[2]")
-	WebElement searchBtn_2;
+	@FindBy (xpath = "(//*[@class='c-omni-searchbox c-omni-searchbox--large'])[1]")
+	WebElement CitySearch;
 	
+	@FindBy (xpath = "(//*[@class='c-omni-searchbox c-omni-searchbox--large'])[2]")
+	WebElement SpecialitySearch;
+		
 	@FindBy (xpath = "(//*[@class='c-omni-suggestion-item__content__title'])[1]")
 	WebElement Bangalore_Btn;
 	
 	@FindBy (xpath = "((//*[@class='c-omni-suggestion-item__my_location_text'])[2])")
 	WebElement EntireBangalore_Btn;
-	
-	@FindBy (xpath = "(//*[@class='c-omni-suggestion-item__content__title'])[1]")
-	WebElement Dentist_Btn;
-	
-	@FindBy (xpath = "(//*[@class='c-omni-suggestion-item'])[1]")
-	WebElement Dentist;
 	
 	@FindBy (xpath = "//*[@class='title']")
 	WebElement Title;
@@ -40,46 +37,94 @@ public class Home_Page extends Constructor {
 	@FindBy (xpath = "(//*[@class='product-tab__title'])[5]")
 	WebElement surgeriesBtn;
 	
-	public boolean Search_city() {
+	
+	public void clickFindDoctors() {
+		
+		WebDriverWait myWait = new WebDriverWait(driver,Duration.ofSeconds(20));
+		myWait.until(ExpectedConditions.elementToBeClickable(findDoctorsBtn)).click();
+	}
+	
+	public boolean SearchCity() {
 		
 		boolean ans = true;
 		WebDriverWait myWait = new WebDriverWait(driver,Duration.ofSeconds(20));
-		myWait.until(ExpectedConditions.elementToBeClickable(searchBtn_1)).click();
-		searchBtn_1.clear();
-		searchBtn_1.sendKeys("Bangalore");
+		myWait.until(ExpectedConditions.elementToBeClickable(CitySearch)).click();
+		CitySearch.clear();
+		CitySearch.sendKeys("Bangalore");
 		
 		try {
 			EntireBangalore_Btn.isDisplayed();
 			ans = true;
-			System.out.println(EntireBangalore_Btn.getText());
-			
+			System.out.println(EntireBangalore_Btn.getText());			
 			myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("((//*[@class='c-omni-suggestion-item__my_location_text'])[2])"))).click();
 		}
 		catch(Exception e) {
 			
 			try {
 				Bangalore_Btn.isDisplayed();
-				ans = true;
 				System.out.println(Bangalore_Btn.getText());
-				
+				ans = true;
 				myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='c-omni-suggestion-item__content__title'])[1]"))).click();
 			}
 			catch(Exception e1) {
-				ans =false;
+				ans = false;
 			}
 		}
 		return ans;
 	}
 	
-	public void SearchDentists() throws InterruptedException {
+	public void SearchDentists() throws InterruptedException{
 		
-		searchBtn_2.sendKeys("Dentist");;
-		Thread.sleep(2000);
+		SpecialitySearch.click();
+		SpecialitySearch.sendKeys("Dentist");
 		WebDriverWait myWait = new WebDriverWait(driver,Duration.ofSeconds(20));
 		myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='c-omni-suggestion-item__content__title'])[1]"))).click();	
 		System.out.println("Searching Dentists");
 		System.out.println("--------------------");
-	
 	}
-
+	
 }
+	
+	
+	
+//	public boolean Search_city() {
+//		
+//		boolean ans = true;
+//		WebDriverWait myWait = new WebDriverWait(driver,Duration.ofSeconds(20));
+//		myWait.until(ExpectedConditions.elementToBeClickable(searchBtn_1)).click();
+//		searchBtn_1.clear();
+//		searchBtn_1.sendKeys("Bangalore");
+//		
+//		try {
+//			EntireBangalore_Btn.isDisplayed();
+//			ans = true;
+//			System.out.println(EntireBangalore_Btn.getText());
+//			
+//			myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("((//*[@class='c-omni-suggestion-item__my_location_text'])[2])"))).click();
+//		}
+//		catch(Exception e) {
+//			
+//			try {
+//				Bangalore_Btn.isDisplayed();
+//				ans = true;
+//				System.out.println(Bangalore_Btn.getText());
+//				
+//				myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='c-omni-suggestion-item__content__title'])[1]"))).click();
+//			}
+//			catch(Exception e1) {
+//				ans =false;
+//			}
+//		}
+//		return ans;
+//	}
+//	
+//	public void SearchDentists() throws InterruptedException {
+//		
+//		searchBtn_2.sendKeys("Dentist");;
+//		Thread.sleep(2000);
+//		WebDriverWait myWait = new WebDriverWait(driver,Duration.ofSeconds(20));
+//		myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='c-omni-suggestion-item__content__title'])[1]"))).click();	
+//		System.out.println("Searching Dentists");
+//		System.out.println("--------------------");
+//	
+//	}

@@ -37,8 +37,8 @@ public class Doctors {
 	public void user_searches_dentists_in_bangalore() throws InterruptedException {
 		
 		Hp = new Home_Page(Base_Class.getDriver());
-		
-		boolean ans = Hp.Search_city();
+		Hp.clickFindDoctors();
+		boolean ans = Hp.SearchCity();
 		Assert.assertEquals(ans, true);
 		Hp.SearchDentists();
 	    
