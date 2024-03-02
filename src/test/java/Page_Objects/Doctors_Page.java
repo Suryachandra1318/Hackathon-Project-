@@ -46,7 +46,7 @@ public class Doctors_Page extends Constructor {
 	@FindBy (xpath = "//*[@class='c-sort-dropdown c-dropdown']")
 	WebElement sortBtn;
 	
-	@FindBy (xpath = "(//*[@class='c-dropdown__list__item'])[11]")
+	@FindBy (xpath = "(//*[@class='c-dropdown__list__item'])[13]")
 	WebElement sortRating;
 	
 	@FindBy (xpath = "//*[@class='u-xx-large-font u-bold']")
@@ -102,8 +102,9 @@ public class Doctors_Page extends Constructor {
 		System.out.println("Sorting");
 		sortBtn.click();
 		WebDriverWait myWait = new WebDriverWait(driver,Duration.ofSeconds(20));
-		myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@class='c-dropdown__list__item'])[11]"))).click();
+		myWait.until(ExpectedConditions.visibilityOf(sortRating)).click();
 		Thread.sleep(2000);
+		
 		System.out.println("--------------------");
 		String DoctorsNum = Doctors.getText();
 		System.out.println(DoctorsNum);

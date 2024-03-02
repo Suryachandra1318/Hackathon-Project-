@@ -25,8 +25,8 @@ public class Finding_Hospitals extends Test_Base {
 	Doctors_Page Dp;
 	EmployeeHealth_Page Ep;
 	Surgeries_Page Sp;
+	
 //	public Logger logger; 
-//	
 //	@BeforeClass
 //	public void driverSetup() {
 //		
@@ -148,9 +148,6 @@ public class Finding_Hospitals extends Test_Base {
 			Assert.fail();
 		}
 	}
-	
-	
-	
 	
 	@Test(priority = 7, groups= {"regression_2"})
 	public void applyFilters_2() throws InterruptedException {

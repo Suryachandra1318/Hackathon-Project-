@@ -80,6 +80,5 @@ public class Surgeries_Page extends Constructor {
 		
 		ForCorporates_Btn.click();
 		Health_Btn.click();
-		Thread.sleep(5000);
 		}
 }
