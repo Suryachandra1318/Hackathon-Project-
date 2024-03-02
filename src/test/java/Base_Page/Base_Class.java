@@ -8,8 +8,6 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
@@ -23,7 +21,7 @@ public class Base_Class {
 
 		 static WebDriver driver;
 	     static Properties p;
-	     static Logger logger;
+	    // static Logger logger;
 	  	     
 	public static WebDriver initilizeBrowser() throws IOException
 	{
@@ -94,11 +92,11 @@ public class Base_Class {
 		return p;
 	}
 	
-	public static Logger getLogger() 
-	{		 
-		logger=LogManager.getLogger(); //Log4j
-		return logger;
-	}
+//	public static Logger getLogger() 
+//	{		 
+//		logger=LogManager.getLogger(); //Log4j
+//		return logger;
+//	}
 	
 	public static String screenshot(WebDriver driver,String filename) throws IOException
 	{
